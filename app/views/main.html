@@ -1,8 +1,22 @@
 <div class="well">
     <div class="row">
-        <div class="form-group-horizontal">
-            <label>Character Name</label>
-            <p>Quentin the Carver</p>
+        <div class="text-center">
+            <h2>{{Character.Name}}</h2> by {{Character.PlayerName}}
+        </div>
+        
+    </div>
+    <div class="row">
+        <div>
+            Race: {{Character.Race}}
+        </div>
+        <div>
+            Class: <span ng-repeat="class in Character.classes">{{class.level + ' ' + class.ClassName + ' / ' }}</span>
+        </div>
+        <div>
+            Level: {{Character.TotalLevel}}
+        </div>
+        <div>
+            Experience: {{Character.Experience}}
         </div>
     </div>
 </div>
