@@ -1,4 +1,4 @@
-<div class="well">
+<div class="row well">
     <div class="row">
         <div class="text-center">
             <h2>{{Character.Name}}</h2> by {{Character.PlayerName}}
@@ -10,7 +10,7 @@
             Race: {{Character.Race}}
         </div>
         <div>
-            Class: <span ng-repeat="class in Character.classes">{{class.level + ' ' + class.ClassName + ' / ' }}</span>
+            Class: <span ng-repeat="class in Character.Classes">{{class.Level + ' ' + class.ClassName + ' / ' }}</span>
         </div>
         <div>
             Level: {{Character.TotalLevel}}
@@ -19,4 +19,50 @@
             Experience: {{Character.Experience}}
         </div>
     </div>
+</div>
+<div class="row well">
+    <div class="row">
+      <div>
+	<label>Proficiency</label>
+        {{Character.ProficiencyBonus}}
+      </div>
+      <div>
+        <label>Strength</label>
+	{{Character.Strength}}
+      </div>
+      <div>
+        <label>Dexterity</label>
+        {{Character.Dexterity}}
+      </div>
+      <div>
+        <label>Dexterity</label>
+        {{Character.Constitution}}
+      </div>
+      <div>
+        <label>Wisdom</label>
+        {{Character.Wisdom}}
+      </div>
+      <div>
+        <label>Intelligence</label>
+        {{Character.Intelligence}}
+      </div>
+      <div>
+        <label>Charisma</label>
+        {{Character.Charisma}}
+      </div>
+</div>
+
+<div class="row well">
+  <div>
+    <label>AC</label>
+    {{Character.AC}}
+  </div>
+  <div>
+    <label>Initiative</label>
+    {{(Character.Dexterity - 10) / 2}}
+  </div>
+  <div>
+    <label>Speed</label>
+    {{Character.Speed}}
+  </div>
 </div>
