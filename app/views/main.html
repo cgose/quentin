@@ -1,22 +1,21 @@
 <div class="row well">
     <div class="row">
         <div class="text-center">
-            <h2>{{Character.Name}}</h2> by {{Character.PlayerName}}
+            <h2>{{main.Character.Name}}</h2> by {{main.Character.PlayerName}}
         </div>
-        
     </div>
     <div class="row">
         <div>
-            Race: {{Character.Race}}
+            Race: {{main.Character.Race}}
         </div>
         <div>
-            Class: <span ng-repeat="class in Character.Classes">{{class.Level + ' ' + class.ClassName + ' / ' }}</span>
+            Class: <span ng-repeat="class in main.Character.Classes">{{class.Level + ' ' + class.ClassName + ' / ' }}</span>
         </div>
         <div>
-            Level: {{Character.TotalLevel}}
+            Level: {{main.Character.TotalLevel}}
         </div>
         <div>
-            Experience: {{Character.Experience}}
+            Experience: {{main.Character.Experience}}
         </div>
     </div>
 </div>
@@ -24,45 +23,45 @@
     <div class="row">
       <div>
 	<label>Proficiency</label>
-        {{Character.ProficiencyBonus}}
+        {{main.Character.ProficiencyBonus}}
       </div>
       <div>
         <label>Strength</label>
-	{{Character.Strength}}
+	{{main.Character.Strength}}
       </div>
       <div>
         <label>Dexterity</label>
-        {{Character.Dexterity}}
+        {{main.Character.Dexterity}}
       </div>
       <div>
         <label>Dexterity</label>
-        {{Character.Constitution}}
+        {{main.Character.Constitution}}
       </div>
       <div>
         <label>Wisdom</label>
-        {{Character.Wisdom}}
+        {{main.Character.Wisdom}}
       </div>
       <div>
         <label>Intelligence</label>
-        {{Character.Intelligence}}
+        {{main.Character.Intelligence}}
       </div>
       <div>
         <label>Charisma</label>
-        {{Character.Charisma}}
+        {{main.Character.Charisma}}
       </div>
 </div>
 
 <div class="row well">
   <div>
     <label>AC</label>
-    {{Character.AC}}
+    {{main.Character.AC}}
   </div>
   <div>
     <label>Initiative</label>
-    {{(Character.Dexterity - 10) / 2}}
+    {{(main.Character.Dexterity - 10) / 2}}
   </div>
   <div>
     <label>Speed</label>
-    {{Character.Speed}}
+    {{main.Character.Speed}}
   </div>
 </div>
