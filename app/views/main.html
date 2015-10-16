@@ -1,57 +1,92 @@
-<div class="row well">
+<div class=" well">
     <div class="row">
         <div class="text-center">
             <h2>{{main.Character.Name}}</h2> by {{main.Character.PlayerName}}
         </div>
     </div>
     <div class="row">
-        <div>
-            Race: {{main.Character.Race}}
+        <div class="col-sm-4">
+            <div>
+                <label>Race</label> {{main.Character.Race}}
+            </div>
+            <div class="">
+                <label>Class</label> <span ng-repeat="class in main.Character.Classes">{{class.Level + ' ' + class.ClassName + ' / ' }}</span>
+            </div>
+            <div>
+                <label>Level</label> {{main.Character.TotalLevel}}
+            </div>
         </div>
-        <div>
-            Class: <span ng-repeat="class in main.Character.Classes">{{class.Level + ' ' + class.ClassName + ' / ' }}</span>
+        <div class="col-sm-4 text-center">
+            <div>
+                <label>AC</label>
+                {{main.Character.AC}}
+            </div>
+            <div>
+                <label>Initiative</label>
+                {{(main.Character.Dexterity - 10) / 2}}
+            </div>
+            <div>
+                <label>Speed</label>
+                {{main.Character.Speed}}
+            </div>
         </div>
-        <div>
-            Level: {{main.Character.TotalLevel}}
-        </div>
-        <div>
-            Experience: {{main.Character.Experience}}
+        <div class="col-sm-4 text-right">
+            <div class="">
+                <label>Current HP</label> {{main.Character.CurrentHP}}
+            </div>
+            <div class="">
+                <label>Experience</label> {{main.Character.Experience}}
+            </div>
         </div>
     </div>
 </div>
-<div class="row well">
+<div class="well">
     <div class="row">
-      <div>
-	<label>Proficiency</label>
-        {{main.Character.ProficiencyBonus}}
+     
+      <div class="col-sm-2 form-group text-center">
+          <label>Strength</label>
+          <input ng-model="main.Character.Strength" id="Strength" class="form-control text-center" disabled/>
+          <input ng-model="(main.Character.Strength - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
+          <label>Modifier</label>
       </div>
-      <div>
-        <label>Strength</label>
-	{{main.Character.Strength}}
+      <div class="col-sm-2 form-group text-center">
+          <label>Dexterity</label>
+          <input ng-model="main.Character.Dexterity" id="Strength" class="form-control text-center" disabled/>
+          <input ng-model="(main.Character.Dexterity - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
+          <label>Modifier</label>
       </div>
-      <div>
-        <label>Dexterity</label>
-        {{main.Character.Dexterity}}
+      <div class="col-sm-2 form-group text-center">
+          <label>Dexterity</label>
+          <input ng-model="main.Character.Constitution" id="Strength" class="form-control text-center" disabled/>
+          <input ng-model="(main.Character.Constitution - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
+          <label>Modifier</label>
       </div>
-      <div>
-        <label>Dexterity</label>
-        {{main.Character.Constitution}}
-      </div>
-      <div>
+      <div class="col-sm-2 form-group text-center">
         <label>Wisdom</label>
-        {{main.Character.Wisdom}}
+          <input ng-model="main.Character.Wisdom" id="Strength" class="form-control text-center" disabled/>
+          <input ng-model="(main.Character.Wisdom - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
+          <label>Modifier</label>
       </div>
-      <div>
+      <div class="col-sm-2 form-group text-center">
         <label>Intelligence</label>
-        {{main.Character.Intelligence}}
+          <input ng-model="main.Character.Intelligence" id="Strength" class="form-control text-center" disabled/>
+          <input ng-model="(main.Character.Intelligence - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
+          <label>Modifier</label>
       </div>
-      <div>
-        <label>Charisma</label>
-        {{main.Character.Charisma}}
+      <div class="col-sm-2 form-group text-center">
+          <label>Charisma</label>
+          <input ng-model="main.Character.Charisma" id="Strength" class="form-control text-center" disabled/>
+          <input ng-model="(main.Character.Charisma - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
+          <label>Modifier</label>
       </div>
 </div>
-
-<div class="row well">
+</div>
+<div class="well">
+     <div class="col-sm-2 form-group text-center">
+          <label>Proficiency</label>
+          <input ng-model="main.Character.ProficiencyBonus" id="Proficiency" class="form-control text-center" disabled/>
+          
+      </div>
   <div>
     <label>AC</label>
     {{main.Character.AC}}
