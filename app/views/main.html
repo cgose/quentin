@@ -35,7 +35,10 @@
                 <label>Current HP</label> {{main.Character.CurrentHP}}
             </div>
             <div class="">
-                <label>Experience</label> {{main.Character.Experience}}
+	      <label>Max HP</label> {{main.Character.MaximumHP}}
+	    </div>
+            <div class="">
+                <label>Proficiency</label> {{main.Character.ProficiencyBonus}}
             </div>
         </div>
     </div>
@@ -46,9 +49,20 @@
         <label>{{stat.Name}}</label>
 	
 	<input ng-model="stat.Attribute" class="form-control text-center" disabled/>
-	<input ng-model="(stat.Attribute - 10) / 2" class="form-control text-center"/>
 	<label>Modifier</label>
+	<input ng-model="(stat.Attribute - 10) / 2" class="form-control text-center" disabled/>
+	<label>Proficient</label>
+	<input type="checkbox" ng-model="stat.Proficient" disabled />
       </div> 
+      <div class="well">
+        <div class="col-sm-4" ng-repeat="skill in main.Character.Skills">
+	  <input type="checkbox" ng-model="skill.Proficient" disabled />
+	  <span ng-if="skill.Proficient">{{main.Character.ProficiencyBonus + (main.Character.Stats[skill.StatIndex].Attribute - 10) / 2}}</span>
+	  <span ng-if="!skill.Proficient">{{(main.Character.Stats[skill.StatIndex].Attribute - 10) / 2}}</span>
+	  <label>{{skill.Name}}</label>
+	  
+	</div> 
+      </div>
      <!-- <div class="col-sm-2 form-group text-center">
           <label>Strength</label>
           <input ng-model="main.Character.Strength" id="Strength" class="form-control text-center" disabled/>
