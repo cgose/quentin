@@ -42,8 +42,14 @@
 </div>
 <div class="well">
     <div class="row">
-     
-      <div class="col-sm-2 form-group text-center">
+      <div class="col-sm-2 form-group text-center" ng-repeat="stat in main.Character.Stats">
+        <label>{{stat.Name}}</label>
+	
+	<input ng-model="stat.Attribute" class="form-control text-center" disabled/>
+	<input ng-model="(stat.Attribute - 10) / 2" class="form-control text-center"/>
+	<label>Modifier</label>
+      </div> 
+     <!-- <div class="col-sm-2 form-group text-center">
           <label>Strength</label>
           <input ng-model="main.Character.Strength" id="Strength" class="form-control text-center" disabled/>
           <input ng-model="(main.Character.Strength - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
@@ -78,25 +84,14 @@
           <input ng-model="main.Character.Charisma" id="Strength" class="form-control text-center" disabled/>
           <input ng-model="(main.Character.Charisma - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
           <label>Modifier</label>
-      </div>
+      </div>-->
 </div>
 </div>
 <div class="well">
+  <div class="row">
      <div class="col-sm-2 form-group text-center">
           <label>Proficiency</label>
-          <input ng-model="main.Character.ProficiencyBonus" id="Proficiency" class="form-control text-center" disabled/>
-          
-      </div>
-  <div>
-    <label>AC</label>
-    {{main.Character.AC}}
-  </div>
-  <div>
-    <label>Initiative</label>
-    {{(main.Character.Dexterity - 10) / 2}}
-  </div>
-  <div>
-    <label>Speed</label>
-    {{main.Character.Speed}}
+          <input ng-model="main.Character.ProficiencyBonus" id="Proficiency" class="form-control text-center" disabled/> 
+     </div>
   </div>
 </div>
