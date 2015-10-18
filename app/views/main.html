@@ -35,8 +35,8 @@
                 <label>Current HP</label> {{main.Character.CurrentHP}}
             </div>
             <div class="">
-	      <label>Max HP</label> {{main.Character.MaximumHP}}
-	    </div>
+	      		<label>Max HP</label> {{main.Character.MaximumHP}}
+	    	</div>
             <div class="">
                 <label>Proficiency</label> {{main.Character.ProficiencyBonus}}
             </div>
@@ -47,65 +47,51 @@
     <div class="row">
       <div class="col-sm-2 form-group text-center" ng-repeat="stat in main.Character.Stats">
         <label>{{stat.Name}}</label>
-	
-	<input ng-model="stat.Attribute" class="form-control text-center" disabled/>
-	<label>Modifier</label>
-	<input ng-model="(stat.Attribute - 10) / 2" class="form-control text-center" disabled/>
-	<label>Proficient</label>
-	<input type="checkbox" ng-model="stat.Proficient" disabled />
-      </div> 
-      <div class="well">
-        <div class="col-sm-4" ng-repeat="skill in main.Character.Skills">
-	  <input type="checkbox" ng-model="skill.Proficient" disabled />
-	  <span ng-if="skill.Proficient">{{main.Character.ProficiencyBonus + (main.Character.Stats[skill.StatIndex].Attribute - 10) / 2}}</span>
-	  <span ng-if="!skill.Proficient">{{(main.Character.Stats[skill.StatIndex].Attribute - 10) / 2}}</span>
-	  <label>{{skill.Name}}</label>
-	  
-	</div> 
+		<input ng-model="stat.Attribute" class="form-control text-center" disabled/>
+		<label>Modifier</label>
+		<span class="badge">{{(stat.Attribute - 10) / 2}}</span>
+		<label>Proficient</label>
+		<input type="checkbox" ng-model="stat.Proficient" disabled />
       </div>
-     <!-- <div class="col-sm-2 form-group text-center">
-          <label>Strength</label>
-          <input ng-model="main.Character.Strength" id="Strength" class="form-control text-center" disabled/>
-          <input ng-model="(main.Character.Strength - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
-          <label>Modifier</label>
-      </div>
-      <div class="col-sm-2 form-group text-center">
-          <label>Dexterity</label>
-          <input ng-model="main.Character.Dexterity" id="Strength" class="form-control text-center" disabled/>
-          <input ng-model="(main.Character.Dexterity - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
-          <label>Modifier</label>
-      </div>
-      <div class="col-sm-2 form-group text-center">
-          <label>Dexterity</label>
-          <input ng-model="main.Character.Constitution" id="Strength" class="form-control text-center" disabled/>
-          <input ng-model="(main.Character.Constitution - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
-          <label>Modifier</label>
-      </div>
-      <div class="col-sm-2 form-group text-center">
-        <label>Wisdom</label>
-          <input ng-model="main.Character.Wisdom" id="Strength" class="form-control text-center" disabled/>
-          <input ng-model="(main.Character.Wisdom - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
-          <label>Modifier</label>
-      </div>
-      <div class="col-sm-2 form-group text-center">
-        <label>Intelligence</label>
-          <input ng-model="main.Character.Intelligence" id="Strength" class="form-control text-center" disabled/>
-          <input ng-model="(main.Character.Intelligence - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
-          <label>Modifier</label>
-      </div>
-      <div class="col-sm-2 form-group text-center">
-          <label>Charisma</label>
-          <input ng-model="main.Character.Charisma" id="Strength" class="form-control text-center" disabled/>
-          <input ng-model="(main.Character.Charisma - 10) / 2" id="StrengthMod" class="form-control text-center" disabled/>
-          <label>Modifier</label>
-      </div>-->
+    </div>
+</div> 
+<div class="well">
+	<div class="row">
+		<div class="col-sm-4" ng-repeat="skill in main.Character.Skills">
+			<input type="checkbox" ng-model="skill.Proficient" disabled />
+			<span ng-if="skill.Proficient">{{main.Character.ProficiencyBonus + (main.Character.Stats[skill.StatIndex].Attribute - 10) / 2}}</span>
+			<span ng-if="!skill.Proficient">{{(main.Character.Stats[skill.StatIndex].Attribute - 10) / 2}}</span>
+			<label>{{skill.Name}}</label>
+	  	</div> 
+	</div>
+</div>
+
 </div>
 </div>
 <div class="well">
-  <div class="row">
-     <div class="col-sm-2 form-group text-center">
-          <label>Proficiency</label>
-          <input ng-model="main.Character.ProficiencyBonus" id="Proficiency" class="form-control text-center" disabled/> 
-     </div>
-  </div>
+	<div class="row">
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="col-xs-3">Name</th>
+					<th>Attack Bonus</th>
+					<th class="col-xs-2">Damage</th>
+					<th>Damage Type</th>
+					<th>Range</th>
+					<th>Properties</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="weapon in main.Character.Weapons track by $index">
+					<td>{{weapon.Name}}</td>
+					<td>{{weapon.Bonus + ((main.Character.Stats[weapon.StatIndex].Attribute - 10) / 2) + main.Character.ProficiencyBonus}}</td>
+					<td>{{weapon.Damage}} + {{weapon.Bonus + ((main.Character.Stats[weapon.StatIndex].Attribute - 10)/2)}}</td>
+					<td>{{weapon.DamageType}}</td>
+					<td>{{weapon.Range}}</td>
+					<td>{{weapon.Properties}}</td>
+				</tr>
+			</tbody>
+		</table>
+	
+	</div>
 </div>

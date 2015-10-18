@@ -1,0 +1,30 @@
+<div class="well">
+	<h3>Prepared Spells</h3>
+	<table class="table">
+		<thead>
+			<tr><th>Name</th><th>Qty</th><th>Slot Level</th></tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="ps in spell.Character.PreparedSpells track by $index">
+				<td>{{ps.Name}}</td>
+				<td>{{ps.Quantity}}</td>
+				<td>{{ps.SlotLevel}}</td>
+			</tr>
+		</tbody>	
+	</table>
+</div>
+<div class="well">
+	<h3>Spell Book</h3>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="sbs in spell.Character.Spellbook track by $index">
+				<td>{{sbs.Name}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
