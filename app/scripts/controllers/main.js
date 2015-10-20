@@ -15,10 +15,6 @@ angular.module('quentinApp')
       'Karma'
     ];
 
-    this.selectSpell = function(spell){
-	this.currentSpell = spell;
-    }
-
     this.Character = {
         Name: "Quentin the Carver",
         PlayerName: "Cameron Gose",

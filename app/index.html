@@ -37,12 +37,12 @@
             <a class="navbar-brand" href="#/">quentin</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="HeaderCtrl">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/spells">Spells</a></li>
-              <li><a ng-href="#/">Contact</a></li>
+              <li ng-class="{active: isActive('/')}"><a href="#/">Home</a></li>
+              <li ng-class="{active: isActive('/spells')}"><a ng-href="#/spells">Spells</a></li>
+              <li ng-class="{active: isActive('/contact')}"><a ng-href="#/contact">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -89,6 +89,7 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+	<script src="scripts/controllers/header.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <!-- endbuild -->
