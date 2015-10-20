@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular UI</title>
+    <link rel="stylesheet" href="../bower_components/jqueryui/themes/smoothness/jquery-ui.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="ngApp">
+    <div ng-controller="MainCtrl">
+        
+        {{target.size}}
+        <div class="container">
+            <div ui-draggable class="target" on-drag-stop="test">
+                <div class="target red" size="target.size" fixed-ratio="true" size="target.size" ui-resizable containment=".container"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/jqueryui/jquery-ui.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../dist/angular-ui.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

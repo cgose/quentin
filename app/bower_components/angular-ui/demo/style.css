@@ -1,0 +1,20 @@
+*{
+    margin:0;padding:0;
+}
+
+.target{
+  width:150px;
+  height:150px;
+  cursor: pointer;
+}
+
+.red{
+  background:#FB8189;
+}
+
+.container{
+  width:800px;
+  height:500px;
+  margin:50px auto;
+  border:1px solid #ddd;
+}
