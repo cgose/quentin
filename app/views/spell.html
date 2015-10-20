@@ -23,7 +23,7 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="sbs in spell.Character.Spellbook track by $index">
-				<td><a tabindex="0" uib-popover-template="'PopoverSpellTemplate.html'" popover-trigger="focus" popover-title="{{sbs.Name}}" >{{sbs.Name}}</a></td>
+				<td><a tabindex="0" uib-popover-template="'PopoverSpellTemplate.html'" popover-placement="right" popover-title="{{sbs.Name}}" >{{sbs.Name}}</a></td>
 			</tr>
 		</tbody>
 	</table>
